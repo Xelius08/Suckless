@@ -94,7 +94,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.7;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 /*static const char *colorname[] = {*/
@@ -127,7 +127,7 @@ float alpha = 0.7;
 	/*"black",*/ /* default background colour */
 /*};*/
 
-#include "/home/xelius/.cache/wal/colors-wal-st.h"
+#include "/home/Xelius/.cache/wal/colors-wal-st.h"
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
