@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono:style=Regular:size=15";
+static char *font = "Hack Nerd Font Mono:style=Regular:size=12";
 static int borderpx = 2;
 
 /*
@@ -94,7 +94,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 /*static const char *colorname[] = {*/
@@ -127,7 +127,7 @@ float alpha = 0.8;
 	/*"black",*/ /* default background colour */
 /*};*/
 
-#include "/home/Xelius/.cache/wal/colors-wal-st.h"
+#include "/home/xelius/.cache/wal/colors-wal-st.h"
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor

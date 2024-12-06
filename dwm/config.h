@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 11;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -39,7 +39,7 @@ static const unsigned int borderalpha = OPAQUE;
    /* [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win*/
 /*};*/
 
-#include "/home/Xelius/.cache/wal/colors-wal-dwm.h"
+#include "/home/xelius/.cache/wal/colors-wal-dwm.h"
 
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
