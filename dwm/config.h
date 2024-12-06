@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 11;       /* gap pixel between windows */
+static const unsigned int gappx     = 6;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -75,7 +75,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "󱞟",      tile },    /* first entry is default */
-	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "󰞍",      NULL },    /* no layout function means floating behavior */
 	{ "",      monocle },
 };
 
@@ -102,6 +102,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
   	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger")},
   	{ MODKEY|ShiftMask,             XK_F10,      spawn,          SHCMD("st -e cava")},
+  	{ MODKEY|ShiftMask,             XK_F5,      spawn,          SHCMD("st -e bashtop")},
+  	{ MODKEY|ShiftMask,             XK_F6,      spawn,          SHCMD("st -e amdgpu_top")},
   	{ MODKEY|ShiftMask,             XK_BackSpace,      spawn,          SHCMD("shutdown now")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
