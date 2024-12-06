@@ -1,6 +1,6 @@
 format = """
 [╭─User───❯](bold blue) $username
-[┣─❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
+[┣─❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs$c
 [╰─XLS────❯](bold green) 
 """
 [username]
@@ -40,6 +40,9 @@ symbol = "  "
 [conda]
 symbol = " "
 
+[c]
+format = 'via [$name $version]($style)'
+
 [dart]
 symbol = " "
 
@@ -59,7 +62,9 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+symbol = ' '
+style = "bold green"
 
 [golang]
 symbol = " "
