@@ -43,10 +43,10 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
    yay -S picom-ftlabs-git
    ```
 8. Install [starship](https://starship.rs/)
-```
-#For Arch users: 
-sudo pacman -S starship
-```
+   ```
+   #For Arch users: 
+   sudo pacman -S starship
+   ```
 
 ### Dotfiles
 All the necessary Dotfiles are available [here](https://github.com/Tahsin404/dotfiles). If you're using GNU stow to manage your dotfiles then you know what to do, if not then: 
