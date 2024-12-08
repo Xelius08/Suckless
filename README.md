@@ -31,25 +31,23 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
    cp config.ini $HOME/.config/polybar
    cp bar.sh $HOME/.config/polybar
    ```
-6. Install [python-pywal](https://github.com/dylanaraps/pywal) and set the theme that complements your chosen wallpaper. If you want the exact look as the demo, copy all the *.h files in .cache/wal
+6. Install [python-pywal](https://github.com/dylanaraps/pywal)
    ```
    #For Arch Users:
    yay -S python-pywal
    wal -i $HOME/Suckeless/Wallpaper/gargantua-black-3840x2160-9621.jpg
-   
-   # For Demo Look
-   cp *.h $HOME/.cache/wal
    ```
->[!Note]
-  When applying colorscheme to dwm with wal, I got an error, this is because I don't have SchemeUrgent patch. If you decide to patch it in then you will have no problems otherwise you will have to manually add the lines from colors-wal-dwm.h
-
-7. Install [picom-ftlabs](https://github.com/FT-Labs/picom) for the exact animation shown in Demo. Make a folder in .config named *picom* and paste picom.conf there.
+7. Install [picom-ftlabs](https://github.com/FT-Labs/picom)
    ```
    #For Arch users
    yay -S picom-ftlabs-git
-   mkdir $HOME/.config/picom
-   cp picom.conf $HOME/.config/picom
    ```
-8. Install [starship](https://starship.rs/) and copy the .toml file into .config `cp starship.toml ~/.config`   
-9. cd into the dwm, st and dmenu folders and `make` and `make clean install`
-10. You can also copy the ranger config files from the Suckless folder into your own ranger config folder if you want this look. And some shortcuts.
+8. Install [starship](https://starship.rs/)
+
+## Dotfiles
+All the necessary Dotfiles are available [here](https://github.com/Tahsin404/dotfiles). If you're using GNU stow to manage your dotfiles then you know what to do, if not then: 
+
+1. Download "starship.toml", ranger, picom, polybar files and folders and place it in your .config directory.
+2. Download the files inside .cache/wal as needed, and place then under your own .cache/wal folder. You may need to generate a wal directory first if it's your first time installing pywal: ` wal -i $HOME/Suckless/Wallpaper/gargantua-black-3840x2160-9621.jpg`
+
+9. Finally cd into the dwm, st and dmenu folders and `make` and `make clean install`
