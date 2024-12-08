@@ -1,0 +1,71 @@
+From 8dbea77ad7b320d9c7e07990274ea74835785084 Mon Sep 17 00:00:00 2001
+From: Markus Hanetzok <markus@hanetzok.net>
+Date: Sun, 14 May 2023 01:04:09 +0200
+Subject: [PATCH] Makes border colors independent from SelBg
+---
+ config.def.h | 5 +++++
+ dmenu.c      | 9 +++++++--
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index 1edb647..ae41b06 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -12,6 +12,7 @@ static const char *colors[SchemeLast][2] = {
+ 	[SchemeNorm] = { "#bbbbbb", "#222222" },
+ 	[SchemeSel] = { "#eeeeee", "#005577" },
+ 	[SchemeOut] = { "#000000", "#00ffff" },
++	[SchemeBorder] = { "#cccccc", NULL },
+ };
+ /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
+ static unsigned int lines      = 0;
+@@ -21,3 +22,7 @@ static unsigned int lines      = 0;
+  * for example: " /?\"&[]"
+  */
+ static const char worddelimiters[] = " ";
++
++/* Size of the window border */
++static unsigned int border_width = 0;
++
+diff --git a/dmenu.c b/dmenu.c
+index 62f1089..7f063b6 100644
+--- a/dmenu.c
++++ b/dmenu.c
+@@ -26,7 +26,7 @@
+ #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
+
+ /* enums */
+-enum { SchemeNorm, SchemeSel, SchemeOut, SchemeLast }; /* color schemes */
++enum { SchemeNorm, SchemeSel, SchemeOut, SchemeBorder, SchemeLast }; /* color schemes */
+
+ struct item {
+ 	char *text;
+@@ -685,9 +685,11 @@ setup(void)
+ 	swa.override_redirect = True;
+ 	swa.background_pixel = scheme[SchemeNorm][ColBg].pixel;
+ 	swa.event_mask = ExposureMask | KeyPressMask | VisibilityChangeMask;
+-	win = XCreateWindow(dpy, root, x, y, mw, mh, 0,
++	win = XCreateWindow(dpy, root, x, y, mw, mh, border_width,
+ 	                    CopyFromParent, CopyFromParent, CopyFromParent,
+ 	                    CWOverrideRedirect | CWBackPixel | CWEventMask, &swa);
++	if (border_width)
++		XSetWindowBorder(dpy, win, scheme[SchemeBorder][ColFg].pixel);
+ 	XSetClassHint(dpy, win, &ch);
+
+
+@@ -759,6 +761,8 @@ main(int argc, char *argv[])
+ 			colors[SchemeSel][ColFg] = argv[++i];
+ 		else if (!strcmp(argv[i], "-w"))   /* embedding window id */
+ 			embed = argv[++i];
++		else if (!strcmp(argv[i], "-bw"))
++			border_width = atoi(argv[++i]); /* border width */
+ 		else
+ 			usage();
+
+@@ -795,3 +799,4 @@ main(int argc, char *argv[])
+
+ 	return 1; /* unreachable */
+ }
++
+--
+2.40.1

@@ -42,4 +42,4 @@ static unsigned int lines      = 5;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 2;
+static unsigned int border_width = 3;
