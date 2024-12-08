@@ -48,7 +48,7 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
 sudo pacman -S starship
 ```
 
-## Dotfiles
+### Dotfiles
 All the necessary Dotfiles are available [here](https://github.com/Tahsin404/dotfiles). If you're using GNU stow to manage your dotfiles then you know what to do, if not then: 
 
 1. Download "starship.toml", ranger, picom, polybar files and folders and place it in your .config directory.
