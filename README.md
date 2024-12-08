@@ -43,11 +43,17 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
    yay -S picom-ftlabs-git
    ```
 8. Install [starship](https://starship.rs/)
+```
+#For Arch users: 
+sudo pacman -S starship
+```
 
 ## Dotfiles
 All the necessary Dotfiles are available [here](https://github.com/Tahsin404/dotfiles). If you're using GNU stow to manage your dotfiles then you know what to do, if not then: 
 
 1. Download "starship.toml", ranger, picom, polybar files and folders and place it in your .config directory.
 2. Download the files inside .cache/wal as needed, and place then under your own .cache/wal folder. You may need to generate a wal directory first if it's your first time installing pywal: ` wal -i $HOME/Suckless/Wallpaper/gargantua-black-3840x2160-9621.jpg`
+
+
 
 9. Finally cd into the dwm, st and dmenu folders and `make` and `make clean install`
