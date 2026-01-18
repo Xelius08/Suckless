@@ -25,7 +25,7 @@ static const char *prompt      = NULL;      /* -p  option; prompt to the left of
 	[SchemeOut] = { "#00c9c6", "#000000" },*/
 /*};*/
 
-#include "/home/xelius/.cache/wal/colors-wal-dmenu.h"
+#include "/home/XeLiuS/.cache/wal/colors-wal-dmenu.h"
 
 static const unsigned int alphas[SchemeLast][2] = {
 	[SchemeNorm] = { OPAQUE, alpha },

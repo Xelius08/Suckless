@@ -127,7 +127,7 @@ float alpha = 1;
 	/*"black",*/ /* default background colour */
 /*};*/
 
-#include "/home/xelius/.cache/wal/colors-wal-st.h"
+#include "/home/XeLiuS/.cache/wal/colors-wal-st.h"
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor

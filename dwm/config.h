@@ -2,16 +2,16 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 6;       /* gap pixel between windows */
+static const unsigned int gappx     = 10;       /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
 static const char *altbarcmd        = "$HOME/.config/polybar/bar.sh"; /* Alternate bar launch command */
-static const int vertpad            = 0;       /* vertical padding of bar */
+static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
-static const int user_bh            = 35;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const int user_bh            = 20;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "Monofur Nerd Font Mono:style=Bold:size=21" };
 static const char dmenufont[]       = "Monofur Nerd Font Mono:style=Bold:size=15";
 /*static const char norm_fg[]         = "#decfc5";*/
@@ -39,7 +39,7 @@ static const unsigned int borderalpha = OPAQUE;
    /* [SchemeSel]  = { sel_fg,      sel_bg,    sel_border },  // the focused win*/
 /*};*/
 
-#include "/home/xelius/.cache/wal/colors-wal-dwm.h"
+#include "/home/XeLiuS/.cache/wal/colors-wal-dwm.h"
 
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
@@ -94,7 +94,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL};
 static const char *termcmd[]  = { "st", NULL };
-
+#include <X11/XF86keysym.h>
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -103,8 +103,11 @@ static const Key keys[] = {
   	{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger")},
   	{ MODKEY|ShiftMask,             XK_F10,      spawn,          SHCMD("st -e cava")},
   	{ MODKEY|ShiftMask,             XK_F5,      spawn,          SHCMD("st -e bashtop")},
-  	{ MODKEY|ShiftMask,             XK_F6,      spawn,          SHCMD("st -e amdgpu_top")},
-  	{ MODKEY|ShiftMask,             XK_BackSpace,      spawn,          SHCMD("shutdown now")},
+  	{ MODKEY|ShiftMask,             XK_F6,      spawn,          SHCMD("st -e sh -c 'amdgpu_top'")},
+  	{ MODKEY|ShiftMask,             XK_BackSpace,      spawn,          SHCMD("systemctl poweroff")},
+    {0,                           XF86XK_AudioLowerVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-")},
+    {0,                           XF86XK_AudioRaiseVolume, spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+")},
+    {0,                           XF86XK_AudioMute,        spawn, SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
